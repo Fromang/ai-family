@@ -1,0 +1,13 @@
+# Dockerfile (tag: v3)
+FROM node:0.12.7
+
+RUN npm install serve -g
+ADD build /app
+
+WORKDIR /app
+RUN serve
+
+ENV NODE_ENV=production
+ENV PORT=4000
+
+EXPOSE 4000
